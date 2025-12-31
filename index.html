@@ -307,7 +307,166 @@
             margin: 0;
             font-size: 0.95rem;
         }
+/* Featured News - الخبر الأبرز */
+.featured-news {
+    position: relative;
+    background: linear-gradient(135deg, rgba(153, 27, 27, 0.4) 0%, rgba(154, 52, 18, 0.3) 50%, rgba(180, 83, 9, 0.4) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.5);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
 
+.featured-news::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.featured-badge {
+    position: absolute;
+    top: -1px;
+    right: 25px;
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+}
+
+.featured-content {
+    position: relative;
+    z-index: 1;
+}
+
+.featured-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.featured-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+    flex-shrink: 0;
+}
+
+.featured-text {
+    flex: 1;
+}
+
+.featured-text h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.featured-text p {
+    font-size: 1.02rem;
+    color: var(--text-light);
+    line-height: 2;
+}
+
+.featured-text .cve-code {
+    color: #f87171;
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.featured-keypoints {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.featured-keypoint {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 10px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.featured-keypoint .kp-icon {
+    font-size: 1.2rem;
+}
+
+.featured-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.featured-meta .news-date {
+    color: #9ca3af;
+}
+
+.featured-meta .news-source {
+    background: rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.featured-meta .news-source:hover {
+    background: rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+    .featured-news {
+        padding: 20px;
+    }
+    
+    .featured-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .featured-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .featured-keypoints {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
         /* Key Points */
         .key-points {
             display: grid;
@@ -644,7 +803,55 @@
                 تقدم هذه النشرة أبرز التطورات التقنية خلال النصف الثاني من ديسمبر 2025، حيث شهدت الفترة تصاعداً ملحوظاً في سباق الذكاء الاصطناعي بين جوجل وOpenAI مع إعلان حالة "Code Red" من كلا الطرفين. كما تزايدت التهديدات السيبرانية مع اكتشاف ثغرات Zero-Day خطيرة في WebKit أثرت على منتجات آبل وجوجل. تستعرض النشرة أيضاً توقعات سوق الذكاء الاصطناعي لعام 2026 وأبرز التوجهات التقنية المستقبلية.
             </p>
         </div>
-
+<!-- Featured News - الخبر الأبرز -->
+<div class="featured-news">
+    <div class="featured-badge">🔥 الخبر الأبرز</div>
+    
+    <div class="featured-content">
+        <div class="featured-header">
+            <div class="featured-icon">🔐</div>
+            <div class="featured-text">
+                <h3>آبل وجوجل تُصلحان ثغرتي Zero-Day خطيرتين في WebKit</h3>
+                <p>
+                    أصدرت آبل تحديثات أمنية طارئة لإصلاح ثغرتين خطيرتين 
+                    (<span class="cve-code">CVE-2025-43529</span> و<span class="cve-code">CVE-2025-14174</span>) 
+                    استُغلتا في هجمات وصفتها بأنها "بالغة التعقيد" تستهدف أفراداً محددين. 
+                    الثغرة الثانية هي نفسها التي أصلحتها جوجل في Chrome في 10 ديسمبر، 
+                    وتتعلق بمكتبة ANGLE للرسوميات. اكتُشفت الثغرات بالتعاون بين فريق Apple SEAR وGoogle TAG، 
+                    مما يشير لاستخدامها في برمجيات تجسس تجارية.
+                </p>
+            </div>
+        </div>
+        
+        <div class="featured-keypoints">
+            <div class="featured-keypoint">
+                <span class="kp-icon">🔄</span>
+                <span>تحديث iOS 26.2 وجميع أنظمة آبل</span>
+            </div>
+            <div class="featured-keypoint">
+                <span class="kp-icon">🛡️</span>
+                <span>تفعيل "Lockdown Mode" للمعرضين للمخاطر</span>
+            </div>
+            <div class="featured-keypoint">
+                <span class="kp-icon">⚠️</span>
+                <span>9 ثغرات Zero-Day أُصلحت في 2025</span>
+            </div>
+            <div class="featured-keypoint">
+                <span class="kp-icon">🔍</span>
+                <span>التعاون بين آبل وجوجل في الكشف</span>
+            </div>
+        </div>
+        
+        <div class="featured-meta">
+            <span class="news-date">📅 12 ديسمبر 2025</span>
+            <div class="news-sources">
+                <a href="https://thehackernews.com/2025/12/apple-issues-security-updates-after-two.html" class="news-source" target="_blank">The Hacker News</a>
+                <a href="https://www.securityweek.com/apple-patches-two-zero-days-tied-to-mysterious-exploited-chrome-flaw/" class="news-source" target="_blank">SecurityWeek</a>
+                <a href="https://support.apple.com/en-us/125885" class="news-source" target="_blank">Apple Support</a>
+            </div>
+        </div>
+    </div>
+</div>
         <!-- AI Section -->
         <section class="section">
             <div class="section-header">
